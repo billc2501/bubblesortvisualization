@@ -11,18 +11,17 @@ function setup() {
 }
 
 async function bubbleSort(ar){
-    for (let i = 0; i < ar.length - 1; i++){
-        let counter =  i;
-        for (let j = i + 1; j < ar.length; j ++){
-            if (ar[j] < ar[counter])
-            counter = j;
+    for (let i = 0; i< ar.length - 1; i ++){
+        for (let j = 0; j < ar.length - 1 - i; j++){
+            if (ar[j] > ar[j + 1]){
+                await swap(ar, j, j+ 1);
+            }
         }
-        await swap(ar, i, counter);
     }
 }
 
 async function swap(ar, a, b){
-    await sleep(100);
+    await sleep(10);
     let temp = ar[a];
     ar[a] = ar[b];
     ar[b] = temp;
