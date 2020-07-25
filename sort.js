@@ -2,10 +2,10 @@ let i  = 0;
 let w = 10;
 
 function setup() {
-    createCanvas(700, 200);
-    values = new Array(floor(width / w));
+    createCanvas(1000, 700);    //creates an area bars
+    values = new Array((width / w));
     for (let i = 0; i < values.length; i ++){
-        values[i] = random(height);
+        values[i] = random(width / 1.5);  //array of height bars
     }
     bubbleSort(values, 0, values.length - 1);
 }
@@ -14,7 +14,7 @@ async function bubbleSort(ar){
     for (let i = 0; i< ar.length - 1; i ++){
         for (let j = 0; j < ar.length - 1 - i; j++){
             if (ar[j] > ar[j + 1]){
-                await swap(ar, j, j+ 1);
+                await swap(ar, j, j+ 1); //swapping between each other
             }
         }
     }
